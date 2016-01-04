@@ -1,0 +1,20 @@
+{
+	"/dist":"../../aka.ide.production/dist",
+
+	"/": "../aka.ide.workbench.dashboard",
+	"/aka/ide/util/":"../../aka.ide.util/aka.ide.util.client/web/util",
+	"/aka/ide/client/nala":"../../aka.ide.client/aka.ide.client.nala/web/client/nala",
+	"/aka/ide/client/concepts":"../../aka.ide.client/aka.ide.client.concepts/web/client/concepts",
+	"/aka/ide/workbench/widgets":"../aka.ide.workbench.widgets/src",
+	"/aka/ide/analysis/build/":"../../aka.ide.analysis/aka.ide.analysis.build/dist",
+	"/aka/ide/analysis/semantics":"../../aka.ide.analysis/aka.ide.analysis.semantics/web/analysis/semantics",
+	"/aka/ide/analysis/syntax":"../../aka.ide.analysis/aka.ide.analysis.syntax/web/analysis/syntax",
+	"/aka/ide/analysis/widgets":"../../aka.ide.analysis/aka.ide.analysis.widgets/web/analysis/widgets",
+	"/aka/ide/port/orion":"../../aka.ide.port/aka.ide.port.orion.editor/web/port/orion",
+	"/aka/ide/client/regions":"../../aka.ide.client/aka.ide.client.regions/web/client/regions",
+	"/dijit/":"../../aka.ide.util/aka.ide.util.client/web/util/dijit",
+	
+	"/demo/": "../aka.ide.workbench.widgets/src/demo",
+	"/legacy":"../aka.ide.workbench.widgets/src/legacy",
+	"/server":"./"
+}

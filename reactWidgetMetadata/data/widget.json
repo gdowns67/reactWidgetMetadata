@@ -1,0 +1,1320 @@
+[
+ {
+  "id": "ConceptModelBrowser",
+  "name": "Concept Properties",
+  "icon": "fa fa-list",
+  "group": "center",
+  "dependencies": [
+   {
+    "files": [
+     "/aka/ide/workbench/widgets/widgets/conceptModelBrowser/conceptModelBrowser.js",
+     "/aka/ide/workbench/widgets/legacy/ConceptViewer/style/ConceptViewer.css",
+     "/aka/ide/workbench/widgets/vis/graphstyle.css"
+    ],
+    "libraries": [
+     {
+      "name": "dojo",
+      "version": "1.8",
+      "path": "/aka/ide/util/dojo/orion-dojo.js"
+     },
+     {
+      "name": "d3",
+      "version": "3.5.5",
+      "path": "/aka/ide/workbench/widgets/vis/lib/d3-wrapper.js"
+     },
+     {
+      "name": "aka-util",
+      "path": "/dist/aka.ide.util.min.js"
+     },
+     {
+      "name": "aka-client",
+      "path": "/dist/aka.ide.client.min.js"
+     }
+    ]
+   }
+  ],
+  "models": {
+   "Concept Model Store": {
+    "type": "ConceptModel"
+   }
+  },
+  "events": {
+   "subscribe": {
+    "concept.select": {
+     "label": "Concept selection",
+     "auto": "true",
+     "defaultScope": "dashboard"
+    }
+   },
+   "publish": {
+    "concept.select": {
+     "label": "Concept selection",
+     "publish": true,
+     "defaultScope": "dashboard"
+    },
+    "concept.hover": {
+     "label": "Hover over Concept",
+     "publish": true,
+     "defaultScope": "dashboard"
+    },
+    "schema.select": {
+     "label": "Schema selection",
+     "publish": true,
+     "defaultScope": "dashboard"
+    }
+   }
+  }
+ },
+ {
+  "id": "ConceptModelViewer",
+  "icon": "fa fa-sitemap",
+  "group": "center",
+  "dependencies": [
+   {
+    "files": [
+     "/aka/ide/workbench/widgets/widgets/conceptModelViewer/conceptModelViewer.js",
+     "/aka/ide/workbench/widgets/legacy/ConceptModelViewer/style/ConceptModelViewer.css",
+     "/aka/ide/workbench/widgets/vis/graphstyle.css"
+    ],
+    "libraries": [
+     {
+      "name": "dojo",
+      "version": "1.8",
+      "path": "/aka/ide/util/dojo/orion-dojo.js"
+     },
+     {
+      "name": "d3",
+      "version": "3.5.5",
+      "path": "/aka/ide/workbench/widgets/vis/lib/d3-wrapper.js"
+     },
+     {
+      "name": "aka-util",
+      "path": "/dist/aka.ide.util.min.js"
+     },
+     {
+      "name": "aka-client",
+      "path": "/dist/aka.ide.client.min.js"
+     }
+    ]
+   }
+  ],
+  "models": {
+   "Concept Model Store": {
+    "type": "ConceptModel"
+   }
+  },
+  "events": {
+   "subscribe": {
+    "concept.select": {
+     "label": "Concept selection",
+     "auto": "true",
+     "defaultScope": "dashboard"
+    },
+    "concept.hover": {
+     "label": "Hover over concept",
+     "auto": true,
+     "defaultScope": "dashboard"
+    }
+   },
+   "publish": {
+    "concept.select": {
+     "label": "Concept selection",
+     "publish": true,
+     "defaultScope": "dashboard"
+    },
+    "schema.select": {
+     "label": "Schema selection",
+     "publish": true,
+     "defaultScope": "dashboard"
+    }
+   }
+  },
+  "options": {
+   "view": {
+    "autoApply": true,
+    "type": "string",
+    "enum": [
+     "tree",
+     "list",
+     "graph"
+    ],
+    "description": "Set which view to use to display the Concept Model: 'tree', 'list' or 'graph'",
+    "label": "View Mode",
+    "onChange": "viewChange"
+   }
+  },
+  "name": "Concept Model"
+ },
+ {
+  "id": "FormGenerator",
+  "icon": "fa fa-bomb",
+  "group": "center",
+  "dependencies": [
+   {
+    "files": [
+     "/aka/ide/workbench/widgets/widgets/formGenerator/formGenerator.js",
+     "/aka/ide/workbench/widgets/widgets/formGenerator/formGenerator.css",
+     "/aka/ide/workbench/widgets/common/css/editorToolbar.css",
+     "/aka/ide/port/orion/style/embeddedEditor.css",
+     "/aka/ide/port/orion/style/textstyler.css",
+     "/aka/ide/port/orion/style/overrides.css",
+     "/aka/ide/port/orion/style/DomainConfig.css",
+     "/aka/ide/port/orion/style/semanticPopup.css"
+    ],
+    "libraries": [
+     {
+      "name": "json form",
+      "path": "/aka/ide/workbench/widgets/lib/jsonform.js"
+     },
+     {
+      "name": "json form ext",
+      "path": "/aka/ide/workbench/widgets/editor/jsonformExtensions.js"
+     },
+     {
+      "name": "zschema",
+      "alias": "ZSchema",
+      "path": "/aka/ide/util/validation/aka-zschema.min.js"
+     },
+     {
+      "name": "orion",
+      "version": "3.0",
+      "path": "/aka/ide/port/orion/legacy/orion-editor.js"
+     },
+     {
+      "name": "dojo",
+      "version": "1.8",
+      "path": "/aka/ide/util/dojo/orion-dojo.js.uncompressed.js"
+     },
+     {
+      "name": "aka-util",
+      "path": "/dist/aka.ide.util.min.js"
+     },
+     {
+      "name": "aka-analysis",
+      "path": "/dist/aka.ide.analysis.min.js"
+     }
+    ]
+   }
+  ],
+  "name": "Code Complete UI"
+ },
+ {
+  "id": "OrionEditor",
+  "icon": "fa fa-code",
+  "group": "center",
+  "dependencies": [
+   {
+    "files": [
+     "/aka/ide/workbench/widgets/widgets/orionEditor/orionEditor.js",
+     "/aka/ide/port/orion/style/embeddedEditor.css",
+     "/aka/ide/port/orion/style/textstyler.css",
+     "/aka/ide/port/orion/style/overrides.css",
+     "/aka/ide/port/orion/style/DomainConfig.css",
+     "/aka/ide/port/orion/style/semanticPopup.css",
+     "/aka/ide/client/regions/style/Region.css",
+     "/aka/ide/workbench/widgets/widgets/orionEditor/orionEditor.css"
+    ],
+    "libraries": [
+     {
+      "name": "orion",
+      "version": "3.0",
+      "path": "/aka/ide/port/orion/legacy/orion-editor.js"
+     },
+     {
+      "name": "dojo",
+      "version": "1.8",
+      "path": "/aka/ide/util/dojo/orion-dojo.js"
+     },
+     {
+      "name": "aka-util",
+      "path": "/dist/aka.ide.util.min.js"
+     },
+     {
+      "name": "aka-analysis",
+      "path": "/dist/aka.ide.analysis.min.js"
+     },
+     {
+      "name": "aka-client",
+      "path": "/dist/aka.ide.client.min.js"
+     },
+     {
+      "name": "aka-port",
+      "path": "/dist/aka.ide.port.min.js"
+     }
+    ]
+   }
+  ],
+  "models": {
+   "Preference Store": {
+    "type": "PreferenceStore"
+   },
+   "Nala Store": {
+    "type": "NalaStore"
+   },
+   "Concept Store": {
+    "type": "ConceptStore"
+   },
+   "Descriptor Store": {
+    "type": "DescriptorStore"
+   },
+   "Domain Store": {
+    "type": "DomainStore"
+   },
+   "Concept Model": {
+    "type": "ConceptModel",
+    "output": true
+   },
+   "Semantic Model": {
+    "type": "SemanticModel",
+    "output": true
+   },
+   "Syntax Model": {
+    "type": "SyntaxModel",
+    "output": true
+   }
+  },
+  "options": {
+   "content": {
+    "autoApply": false,
+    "type": "string",
+    "visible": false,
+    "onChange": "contentChange"
+   },
+   "langId": {
+    "label": "Base Language",
+    "autoApply": false,
+    "type": "string",
+    "visible": true,
+    "onChange": "langIdChange"
+   }
+  },
+  "defaults": {},
+  "events": {
+   "subscribe": {
+    "text.insert": {
+     "label": "Insert Text",
+     "auto": "true",
+     "defaultScope": "dashboard"
+    },
+    "text.set": {
+     "label": "Set Text",
+     "auto": "true",
+     "defaultScope": "dashboard"
+    },
+    "text.append": {
+     "label": "Append Text",
+     "auto": "true",
+     "defaultScope": "dashboard"
+    }
+   }
+  },
+  "name": "Orion Editor"
+ },
+ {
+  "id": "SnippetList",
+  "icon": "fa fa-list",
+  "group": "center",
+  "dependencies": [
+   {
+    "files": [
+     "/aka/ide/workbench/widgets/widgets/snippetList/snippetList.js",
+     "/aka/ide/workbench/widgets/widgets/snippetList/snippetList.css"
+    ],
+    "libraries": [
+     {
+      "name": "dojo",
+      "version": "1.8",
+      "path": "/aka/ide/util/dojo/orion-dojo.js"
+     }
+    ]
+   }
+  ],
+  "events": {
+   "publish": {
+    "text.insert": {
+     "label": "Insert Text",
+     "publish": true
+    },
+    "text.set": {
+     "label": "Set Text",
+     "publish": true
+    },
+    "text.append": {
+     "label": "Append Text",
+     "publish": true
+    }
+   }
+  },
+  "options": {
+   "snippetSource": {
+    "label": "Snippet Source",
+    "type": "select",
+    "default": "/legacy/snippets/snippets.json",
+    "values": [
+     {
+      "label": "Debug Snippets",
+      "value": "/legacy/snippets/snippets.json"
+     },
+     {
+      "label": "Website Snippets",
+      "value": "/snippets"
+     }
+    ],
+    "onChange": "setSnippetSource",
+    "autoApply": true
+   }
+  },
+  "name": "Snippet List"
+ },
+ {
+  "id": "SymbolTable",
+  "icon": "fa fa-font",
+  "group": "center",
+  "dependencies": [
+   {
+    "files": [
+     "/aka/ide/workbench/widgets/widgets/SymbolTable/SymbolTable.js",
+     "/aka/ide/workbench/widgets/legacy/style/conceptmodelviewer.css",
+     "/aka/ide/analysis/widgets/styles/st-viewer.css"
+    ],
+    "libraries": [
+     {
+      "name": "dojo",
+      "version": "1.8",
+      "path": "/aka/ide/util/dojo/orion-dojo.js"
+     },
+     {
+      "name": "aka-analysis",
+      "path": "/dist/aka.ide.analysis.min.js"
+     }
+    ]
+   }
+  ],
+  "models": {
+   "Symbol Model Store": {
+    "type": "SemanticModel"
+   }
+  },
+  "options": {
+   "showImplicits": {
+    "label": "show implicits",
+    "autoApply": true,
+    "type": "boolean",
+    "description": "show implicits"
+   }
+  },
+  "defaults": {},
+  "name": "Symbol Table"
+ },
+ {
+  "id": "SyntaxViewer",
+  "icon": "fa fa-sitemap",
+  "group": "center",
+  "dependencies": [
+   {
+    "files": [
+     "/aka/ide/workbench/widgets/widgets/syntaxViewer/syntaxViewer.js",
+     "/aka/ide/workbench/widgets/widgets/syntaxViewer/syntaxViewer.css"
+    ],
+    "libraries": [
+     {
+      "name": "dojo",
+      "version": "1.8",
+      "path": "/aka/ide/util/dojo/orion-dojo.js"
+     },
+     {
+      "name": "aka-analysis",
+      "path": "/dist/aka.ide.analysis.min.js"
+     }
+    ]
+   }
+  ],
+  "models": {
+   "Syntax Model Store": {
+    "type": "SyntaxModel"
+   }
+  },
+  "options": {
+   "showWhitespace": {
+    "label": "Show Whitespace",
+    "autoApply": true,
+    "type": "boolean",
+    "description": "show whitespace",
+    "onChange": "showWhitespaceChange"
+   }
+  },
+  "defaults": {},
+  "name": "Syntax Tree"
+ },
+ {
+  "id": "ContentEditor",
+  "icon": "fa fa-file-text-o",
+  "group": "center",
+  "isAngular": true,
+  "headerHeight": "65",
+  "footerHeight": "26",
+  "dependencies": [
+   {
+    "files": [
+     "/aka/ide/workbench/widgets/widgets/contentEditor/contentEditor.js",
+     "/aka/ide/workbench/widgets/common/css/forms.css",
+     "/aka/ide/workbench/widgets/common/css/editorToolbar.css",
+     "/aka/ide/workbench/widgets/common/css/tabContainer.css",
+     "/aka/ide/port/orion/style/embeddedEditor.css",
+     "/aka/ide/port/orion/style/textstyler.css",
+     "/aka/ide/port/orion/style/overrides.css",
+     "/aka/ide/port/orion/style/DomainConfig.css",
+     "/aka/ide/port/orion/style/semanticPopup.css",
+     "/aka/ide/client/regions/style/Region.css",
+     "/aka/ide/workbench/widgets/legacy/style/json.css",
+     "/aka/ide/workbench/widgets/legacy/style/common.css"
+    ],
+    "libraries": [
+     {
+      "name": "json form",
+      "path": "/aka/ide/workbench/widgets/lib/jsonform.js"
+     },
+     {
+      "name": "json form ext",
+      "path": "/aka/ide/workbench/widgets/editor/jsonformExtensions.js"
+     },
+     {
+      "name": "zschema",
+      "alias": "ZSchema",
+      "path": "/aka/ide/util/validation/aka-zschema.min.js"
+     },
+     {
+      "name": "orion",
+      "version": "3.0",
+      "path": "/aka/ide/port/orion/legacy/orion-editor.js"
+     },
+     {
+      "name": "dojo",
+      "version": "1.8",
+      "path": "/aka/ide/util/dojo/orion-dojo.js"
+     },
+     {
+      "name": "aka-util",
+      "path": "/dist/aka.ide.util.min.js"
+     },
+     {
+      "name": "aka-analysis",
+      "path": "/dist/aka.ide.analysis.min.js"
+     },
+     {
+      "name": "aka-client",
+      "path": "/dist/aka.ide.client.min.js"
+     },
+     {
+      "name": "aka-port",
+      "path": "/dist/aka.ide.port.min.js"
+     }
+    ]
+   }
+  ],
+  "models": {
+   "Preference Store": {
+    "type": "PreferenceStore"
+   },
+   "Concept Store": {
+    "type": "ConceptStore"
+   },
+   "Descriptor Store": {
+    "type": "DescriptorStore"
+   },
+   "Nala Store": {
+    "type": "NalaStore"
+   },
+   "Domain Store": {
+    "type": "DomainStore"
+   }
+  },
+  "events": {
+   "subscribe": {
+    "schema.select": {
+     "label": "Schema selection",
+     "auto": "true",
+     "defaultScope": "dashboard"
+    }
+   },
+   "publish": {
+    "schema.select": {
+     "label": "Schema selection",
+     "publish": true
+    }
+   }
+  },
+  "options": {
+   "selection": {
+    "label": "Selection",
+    "autoApply": true,
+    "type": "qname",
+    "description": "currently selected concept",
+    "onChange": "onSelectionChange"
+   },
+   "readonly": {
+    "label": "Read Only",
+    "autoApply": true,
+    "type": "boolean",
+    "onChange": "readOnlyChange",
+    "default": false
+   },
+   "viewMode": {
+    "label": "View as",
+    "type": "radio",
+    "autoApply": true,
+    "values": [
+     {
+      "label": "Advanced",
+      "value": "advanced"
+     },
+     {
+      "label": "Simple",
+      "value": "simple"
+     },
+     {
+      "label": "Raw",
+      "value": "raw"
+     }
+    ],
+    "description": "Show properties",
+    "onChange": "viewModeChange",
+    "default": "advanced"
+   }
+  },
+  "name": "Content Editor"
+ },
+ {
+  "id": "ContentNavigator",
+  "icon": "fa fa-list",
+  "group": "center",
+  "isAngular": true,
+  "headerHeight": "60",
+  "footerHeight": "2",
+  "template": {
+   "url": "/aka/ide/workbench/widgets/widgets/contentNavigator/template/template.html"
+  },
+  "dependencies": [
+   {
+    "files": [
+     "/aka/ide/workbench/widgets/lib/tree.jquery.js",
+     "/aka/ide/workbench/widgets/widgets/contentNavigator/contentNavigator.js",
+     "/aka/ide/workbench/widgets/common/css/jqtree.css",
+     "/aka/ide/workbench/widgets/widgets/contentNavigator/css/contentNavigator.css",
+     "/aka/ide/workbench/widgets/common/css/forms.css",
+     "/aka/ide/workbench/widgets/common/css/schemaNavigator.css",
+     "/aka/ide/workbench/widgets/legacy/style/common.css",
+     "/aka/ide/workbench/widgets/vis/d3-tooltip.css",
+     "/aka/ide/workbench/widgets/widgets/contentNavigator/css/font-awesome.min.css"
+    ],
+    "libraries": [
+     {
+      "name": "d3",
+      "version": "3.5.5",
+      "path": "/aka/ide/workbench/widgets/vis/lib/d3-wrapper.js"
+     },
+     {
+      "name": "dojo",
+      "version": "1.8",
+      "path": "/aka/ide/util/dojo/orion-dojo.js"
+     },
+     {
+      "name": "aka-util",
+      "path": "/dist/aka.ide.util.min.js"
+     },
+     {
+      "name": "aka-analysis",
+      "path": "/dist/aka.ide.analysis.min.js"
+     },
+     {
+      "name": "aka-client",
+      "path": "/dist/aka.ide.client.min.js"
+     }
+    ]
+   }
+  ],
+  "models": {
+   "schema:concept": {
+    "type": "ConceptStore"
+   },
+   "schema:descriptor": {
+    "type": "DescriptorStore"
+   }
+  },
+  "options": {
+   "view": {
+    "autoApply": true,
+    "type": "radio",
+    "values": [
+     "list",
+     "tree",
+     "graph"
+    ],
+    "label": "View As",
+    "description": "Set how to view domain hierachy",
+    "onChange": "updateView",
+    "default": "tree"
+   },
+   "listType": {
+    "autoApply": true,
+    "type": "radio",
+    "values": [
+     "group",
+     "plain"
+    ],
+    "default": "group",
+    "label": "List type",
+    "description": "Set whether to group items in the List-view, or display as a flat list",
+    "onChange": "listTypeChange"
+   },
+   "labelStyle": {
+    "autoApply": true,
+    "type": "radio",
+    "values": [
+     "label",
+     "id"
+    ],
+    "default": "label",
+    "label": "Label Style",
+    "description": "Select whether to label domains using their label or id",
+    "onChange": "labelStyleChange"
+   },
+   "filterDomain": {
+    "autoApply": true,
+    "type": "qname",
+    "fixDomain": "domain",
+    "description": "The domain from which content will be listed",
+    "label": "Current Domain",
+    "onChange": "filterDomainChange",
+    "default": "domain:petstore"
+   },
+   "selection": {
+    "autoApply": true,
+    "type": "qname",
+    "description": "The currently selected content",
+    "label": "Selected Item",
+    "onChange": "selectionChange"
+   }
+  },
+  "events": {
+   "subscribe": {
+    "schema.select": {
+     "auto": "true",
+     "defaultScope": "dashboard",
+     "label": "Schema Selection"
+    },
+    "domain.select": {
+     "auto": "true",
+     "defaultScope": "dashboard",
+     "label": "Domain Selection"
+    }
+   },
+   "publish": {
+    "schema.select": {
+     "label": "Schema Selection",
+     "publish": true
+    }
+   }
+  },
+  "name": "Content Navigator"
+ },
+ {
+  "id": "DomainEditor",
+  "icon": "fa fa-file-text-o",
+  "group": "center",
+  "isAngular": true,
+  "headerHeight": "60",
+  "dependencies": [
+   {
+    "files": [
+     "/aka/ide/workbench/widgets/widgets/domainEditor/domainEditor.js",
+     "/aka/ide/workbench/widgets/common/css/forms.css",
+     "/aka/ide/workbench/widgets/common/css/editorToolbar.css",
+     "/aka/ide/port/orion/style/embeddedEditor.css",
+     "/aka/ide/port/orion/style/textstyler.css",
+     "/aka/ide/port/orion/style/overrides.css",
+     "/aka/ide/port/orion/style/DomainConfig.css",
+     "/aka/ide/port/orion/style/semanticPopup.css",
+     "/aka/ide/client/regions/style/Region.css",
+     "/aka/ide/workbench/widgets/legacy/style/json.css",
+     "/aka/ide/workbench/widgets/legacy/style/common.css"
+    ],
+    "libraries": [
+     {
+      "name": "json form",
+      "path": "/aka/ide/workbench/widgets/lib/jsonform.js"
+     },
+     {
+      "name": "json form",
+      "path": "/aka/ide/workbench/widgets/editor/jsonformExtensions.js"
+     },
+     {
+      "name": "zschema",
+      "alias": "ZSchema",
+      "path": "/aka/ide/util/validation/aka-zschema.min.js"
+     },
+     {
+      "name": "orion",
+      "version": "3.0",
+      "path": "/aka/ide/port/orion/legacy/orion-editor.js"
+     },
+     {
+      "name": "dojo",
+      "version": "1.8",
+      "path": "/aka/ide/util/dojo/orion-dojo.js.uncompressed.js"
+     },
+     {
+      "name": "aka-util",
+      "path": "/dist/aka.ide.util.min.js"
+     },
+     {
+      "name": "aka-analysis",
+      "path": "/dist/aka.ide.analysis.min.js"
+     },
+     {
+      "name": "aka-client",
+      "path": "/dist/aka.ide.client.min.js"
+     },
+     {
+      "name": "aka-port",
+      "path": "/dist/aka.ide.port.min.js"
+     }
+    ]
+   }
+  ],
+  "models": {
+   "Domain Store": {
+    "type": "DomainStore"
+   },
+   "Descriptor Store": {
+    "type": "DescriptorStore"
+   }
+  },
+  "events": {
+   "subscribe": {
+    "domain.select": {
+     "label": "Domain Selection",
+     "auto": "true",
+     "defaultScope": "dashboard"
+    }
+   },
+   "publish": {
+    "domain.select": {
+     "label": "Domain Selection",
+     "publish": true
+    }
+   }
+  },
+  "options": {
+   "selection": {
+    "label": "Selection",
+    "autoApply": true,
+    "type": "qname",
+    "description": "currently selected concept",
+    "onChange": "selectionChange"
+   },
+   "readonly": {
+    "label": "Read Only",
+    "autoApply": true,
+    "type": "boolean",
+    "onChange": "readOnlyChange",
+    "default": false
+   },
+   "viewMode": {
+    "label": "View as",
+    "type": "radio",
+    "autoApply": true,
+    "values": [
+     {
+      "label": "Advanced",
+      "value": "advanced"
+     },
+     {
+      "label": "Simple",
+      "value": "simple"
+     },
+     {
+      "label": "Raw",
+      "value": "raw"
+     }
+    ],
+    "description": "Show properties",
+    "onChange": "viewModeChange",
+    "default": "advanced"
+   }
+  },
+  "name": "Domain Editor"
+ },
+ {
+  "id": "DomainNavigator",
+  "icon": "fa fa-list",
+  "group": "center",
+  "isAngular": true,
+  "template": {
+   "url": "/aka/ide/workbench/widgets/widgets/domainNavigator/template/template.html"
+  },
+  "dependencies": [
+   {
+    "files": [
+     "/aka/ide/workbench/widgets/lib/tree.jquery.js",
+     "/aka/ide/workbench/widgets/widgets/domainNavigator/domainNavigator.js",
+     "/aka/ide/workbench/widgets/common/css/jqtree.css",
+     "/aka/ide/workbench/widgets/common/css/schemaNavigator.css",
+     "/aka/ide/workbench/widgets/widgets/domainNavigator/css/domainNavigator.css",
+     "/aka/ide/workbench/widgets/legacy/style/common.css",
+     "/aka/ide/workbench/widgets/vis/d3-tooltip.css"
+    ],
+    "libraries": [
+     {
+      "name": "dojo",
+      "version": "1.8",
+      "path": "/aka/ide/util/dojo/orion-dojo.js"
+     },
+     {
+      "name": "aka-util",
+      "path": "/dist/aka.ide.util.min.js"
+     },
+     {
+      "name": "aka-client",
+      "path": "/dist/aka.ide.client.min.js"
+     },
+     {
+      "name": "d3",
+      "version": "3.5.5",
+      "path": "/aka/ide/workbench/widgets/vis/lib/d3-wrapper.js"
+     }
+    ]
+   }
+  ],
+  "models": {
+   "schema:domain": {
+    "type": "DomainStore"
+   }
+  },
+  "options": {
+   "view": {
+    "autoApply": true,
+    "type": "radio",
+    "values": [
+     "list",
+     "tree",
+     "graph"
+    ],
+    "label": "View As",
+    "description": "Set how to view domain hierachy",
+    "onChange": "updateView",
+    "default": "tree"
+   },
+   "listType": {
+    "autoApply": true,
+    "type": "radio",
+    "values": [
+     "group",
+     "plain"
+    ],
+    "default": "group",
+    "label": "List type",
+    "description": "Set whether to group items in the List-view, or display as a flat list",
+    "onChange": "listTypeChange"
+   },
+   "labelStyle": {
+    "autoApply": true,
+    "type": "radio",
+    "values": [
+     "label",
+     "id"
+    ],
+    "group": "label",
+    "label": "Label Style",
+    "description": "Select whether to label domains using their label or id",
+    "onChange": "labelStyleChange"
+   },
+   "selection": {
+    "autoApply": true,
+    "type": "qname",
+    "description": "The currently selected domain (requires a qname)",
+    "label": "Selection",
+    "onChange": "selectionChange"
+   }
+  },
+  "defaults": {
+   "view": "list",
+   "listType": "group",
+   "labelStyle": "label"
+  },
+  "events": {
+   "subscribe": {
+    "domain.select": {
+     "label": "Domain Selection",
+     "auto": "true",
+     "defaultScope": "dashboard"
+    }
+   },
+   "publish": {
+    "domain.select": {
+     "label": "Domain Selection",
+     "publish": true
+    }
+   }
+  },
+  "name": "Domain Navigator"
+ },
+ {
+  "id": "NalaEditor",
+  "icon": "fa fa-file-text-o",
+  "group": "center",
+  "headerHeight": "60",
+  "isAngular": true,
+  "dependencies": [
+   {
+    "files": [
+     "/aka/ide/workbench/widgets/widgets/nalaEditor/nalaEditor.js",
+     "/aka/ide/workbench/widgets/common/css/forms.css",
+     "/aka/ide/workbench/widgets/common/css/editorToolbar.css",
+     "/aka/ide/workbench/widgets/common/css/tabContainer.css",
+     "/aka/ide/port/orion/style/embeddedEditor.css",
+     "/aka/ide/port/orion/style/textstyler.css",
+     "/aka/ide/port/orion/style/overrides.css",
+     "/aka/ide/workbench/widgets/legacy/style/common.css"
+    ],
+    "libraries": [
+     {
+      "name": "json form",
+      "path": "/aka/ide/workbench/widgets/lib/jsonform.js"
+     },
+     {
+      "name": "json form ext",
+      "path": "/aka/ide/workbench/widgets/editor/jsonformExtensions.js"
+     },
+     {
+      "name": "json form",
+      "path": "/aka/ide/workbench/widgets/editor/jsonformExtensions.js"
+     },
+     {
+      "name": "zschema",
+      "alias": "ZSchema",
+      "path": "/aka/ide/util/validation/aka-zschema.min.js"
+     },
+     {
+      "name": "orion",
+      "version": "3.0",
+      "path": "/aka/ide/port/orion/legacy/orion-editor.js"
+     },
+     {
+      "name": "dojo",
+      "version": "1.8",
+      "path": "/aka/ide/util/dojo/orion-dojo.js.uncompressed.js"
+     },
+     {
+      "name": "aka-util",
+      "path": "/dist/aka.ide.util.min.js"
+     },
+     {
+      "name": "aka-analysis",
+      "path": "/dist/aka.ide.analysis.min.js"
+     },
+     {
+      "name": "aka-client",
+      "path": "/dist/aka.ide.client.min.js"
+     },
+     {
+      "name": "aka-port",
+      "path": "/dist/aka.ide.port.min.js"
+     }
+    ]
+   }
+  ],
+  "models": {
+   "Nala Store": {
+    "type": "NalaStore"
+   }
+  },
+  "events": {
+   "subscribe": {
+    "schema.select": {
+     "label": "Schema Selection",
+     "auto": "true",
+     "defaultScope": "dashboard"
+    }
+   },
+   "publish": {
+    "nala.select": {
+     "label": "Nala Selection",
+     "publish": true
+    }
+   }
+  },
+  "options": {
+   "selection": {
+    "label": "Selection",
+    "autoApply": true,
+    "type": "qname",
+    "description": "currently selected concept",
+    "onChange": "selectionChange"
+   },
+   "readonly": {
+    "label": "Read Only",
+    "autoApply": true,
+    "type": "boolean",
+    "onChange": "readOnlyChange",
+    "default": false
+   },
+   "viewMode": {
+    "label": "View as",
+    "type": "radio",
+    "autoApply": true,
+    "values": [
+     {
+      "label": "Advanced",
+      "value": "advanced"
+     },
+     {
+      "label": "Simple",
+      "value": "simple"
+     },
+     {
+      "label": "Raw",
+      "value": "raw"
+     }
+    ],
+    "description": "Show properties",
+    "onChange": "viewModeChange",
+    "default": "advanced"
+   }
+  },
+  "name": "Nala Editor"
+ },
+ {
+  "id": "ConceptModel",
+  "path": "aka/ide/workbench/widgets/models/conceptModel/ConceptModel",
+  "dependencies": [
+   {
+    "files": [
+     "/aka/ide/workbench/widgets/models/conceptModel/ConceptModel.js"
+    ]
+   }
+  ],
+  "defaults": {},
+  "name": "Concept Model",
+  "type": "model",
+  "outputOnly": true
+ },
+ {
+  "id": "ConceptStore",
+  "dependencies": [
+   {
+    "files": [
+     "/aka/ide/workbench/widgets/models/conceptStore/ConceptStore.js"
+    ],
+    "libraries": [
+     {
+      "name": "dojo",
+      "version": "1.8",
+      "path": "/aka/ide/util/dojo/orion-dojo.js"
+     },
+     {
+      "name": "aka-util",
+      "path": "/dist/aka.ide.util.min.js"
+     },
+     {
+      "name": "aka-client",
+      "path": "/dist/aka.ide.client.min.js"
+     }
+    ]
+   }
+  ],
+  "options": {
+   "loadDeep": {
+    "autoApply": true,
+    "type": "boolean",
+    "label": "Deep Load",
+    "description": "Always download a full definition of each new domain encountered",
+    "visible": true
+   },
+   "useCache": {
+    "autoApply": true,
+    "type": "boolean",
+    "label": "Use Cache",
+    "description": "Use a client-side cache of all items in the store (experimental)",
+    "visible": true,
+    "onChange": "useCacheChange"
+   }
+  },
+  "defaults": {},
+  "name": "Concept Store",
+  "type": "model"
+ },
+ {
+  "id": "DescriptorStore",
+  "dependencies": [
+   {
+    "files": [
+     "/aka/ide/workbench/widgets/models/descriptorStore/DescriptorStore.js"
+    ],
+    "libraries": [
+     {
+      "name": "dojo",
+      "version": "1.8",
+      "path": "/aka/ide/util/dojo/orion-dojo.js"
+     },
+     {
+      "name": "aka-util",
+      "path": "/dist/aka.ide.util.min.js"
+     },
+     {
+      "name": "aka-analysis",
+      "path": "/dist/aka.ide.analysis.min.js"
+     },
+     {
+      "name": "aka-client",
+      "path": "/dist/aka.ide.client.min.js"
+     }
+    ]
+   }
+  ],
+  "options": {
+   "loadDeep": {
+    "autoApply": true,
+    "type": "boolean",
+    "label": "Deep Load",
+    "description": "Always download a full definition of each new domain encountered"
+   },
+   "useCache": {
+    "autoApply": true,
+    "type": "boolean",
+    "label": "Use Cache",
+    "description": "Use a client-side cache of all items in the store (experimental)",
+    "onChange": "useCacheChange"
+   }
+  },
+  "defaults": {},
+  "name": "Descriptor Store",
+  "type": "model"
+ },
+ {
+  "id": "DomainStore",
+  "dependencies": [
+   {
+    "files": [
+     "/aka/ide/workbench/widgets/models/domainStore/DomainStore.js"
+    ],
+    "libraries": [
+     {
+      "name": "dojo",
+      "version": "1.8",
+      "path": "/aka/ide/util/dojo/orion-dojo.js"
+     },
+     {
+      "name": "aka-util",
+      "path": "/dist/aka.ide.util.min.js"
+     },
+     {
+      "name": "aka-client",
+      "path": "/dist/aka.ide.client.min.js"
+     }
+    ]
+   }
+  ],
+  "defaults": {},
+  "name": "Domain Store",
+  "type": "model"
+ },
+ {
+  "id": "NalaStore",
+  "dependencies": [
+   {
+    "files": [
+     "/aka/ide/workbench/widgets/models/nalaStore/NalaStore.js"
+    ],
+    "libraries": [
+     {
+      "name": "dojo",
+      "version": "1.8",
+      "path": "/aka/ide/util/dojo/orion-dojo.js"
+     },
+     {
+      "name": "aka-util",
+      "path": "/dist/aka.ide.util.min.js"
+     },
+     {
+      "name": "aka-client",
+      "path": "/dist/aka.ide.client.min.js"
+     }
+    ]
+   }
+  ],
+  "options": {
+   "loadDeep": {
+    "autoApply": true,
+    "type": "boolean",
+    "label": "Deep Load",
+    "description": "Always download a full definition of each new domain encountered"
+   },
+   "useCache": {
+    "autoApply": true,
+    "type": "boolean",
+    "label": "Use Cache",
+    "description": "Use a client-side cache of all items in the store (experimental)",
+    "visible": true,
+    "onChange": "useCacheChange"
+   }
+  },
+  "defaults": {},
+  "name": "Nala Store",
+  "type": "model"
+ },
+ {
+  "id": "PreferenceStore",
+  "dependencies": [
+   {
+    "files": [
+     "/aka/ide/workbench/widgets/models/preferenceStore/PreferenceStore.js"
+    ],
+    "libraries": [
+     {
+      "name": "dojo",
+      "version": "1.8",
+      "path": "/aka/ide/util/dojo/orion-dojo.js"
+     },
+     {
+      "name": "aka-util",
+      "path": "/dist/aka.ide.util.min.js"
+     }
+    ]
+   }
+  ],
+  "defaults": {},
+  "name": "Preference Store",
+  "type": "model"
+ },
+ {
+  "id": "SemanticModel",
+  "path": "aka/ide/workbench/widgets/models/semanticModel/SemanticModel",
+  "dependencies": [
+   {
+    "files": [
+     "/aka/ide/workbench/widgets/models/SemanticModel/SemanticModel.js"
+    ]
+   }
+  ],
+  "defaults": {},
+  "name": "Semantic Model",
+  "type": "model",
+  "outputOnly": true
+ },
+ {
+  "id": "SyntaxModel",
+  "path": "aka/ide/workbench/widgets/models/syntaxModel/SyntaxModel",
+  "dependencies": [
+   {
+    "files": [
+     "/aka/ide/workbench/widgets/models/syntaxmodel/SyntaxModel.js"
+    ]
+   }
+  ],
+  "defaults": {},
+  "name": "Syntax Model",
+  "type": "model",
+  "outputOnly": true
+ }
+]

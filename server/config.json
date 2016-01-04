@@ -1,0 +1,18 @@
+{
+	"kbroot": "http://server:5151",
+	"nalapath": "/nalaservices",
+	"name": "Knowledge Workbench",
+	"persistenceOptions": {
+		"widget":{
+			"source": "../aka.ide.workbench.widgets/src/widgets",
+			"home": "./persist/file/data" 
+		},
+		"workspaces":{
+			"source": "../aka.ide.workbench.widgets/src/models",
+			"home": "./persist/file/data/users"
+		}
+		 
+	},
+	"persistenceAdapter": "file",
+	"port": 8082
+}
